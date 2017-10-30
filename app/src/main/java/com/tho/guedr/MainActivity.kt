@@ -12,5 +12,24 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Log.v(TAG, "He pasado por onCreate")
+
+        if (savedInstanceState != null) {
+            Log.v(TAG, "savedInstanceState no es null y clave vale: ${savedInstanceState.getString("clave")}")
+        } else {
+            Log.v(TAG, "savedInstanceState ES null")
+        }
     }
+
+    override fun onSaveInstanceState(outState: Bundle?) {
+//        super.onSaveInstanceState(outState)
+//        Log.v(TAG, "He pasado por onSaveInstanceState")
+//
+//        if (outState != null) {
+//            //Aquí estamos seguros de que podemos llamar a métodos de outStatu sin NPE
+//            outState.putString("clave", "valor")
+//        }
+        // El resultado es el mismo
+        outState?.putString("clave", "valor")
+    }
+
 }
