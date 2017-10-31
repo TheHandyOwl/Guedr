@@ -14,6 +14,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val forecast = Forecast(25f, 10f, 35f, "Soleado con alguna nube", R.drawable.ico_01)
+
+        setForecast(forecast)
+        
     }
+
+    private fun setForecast(forecast: Forecast) {}
 
 }
