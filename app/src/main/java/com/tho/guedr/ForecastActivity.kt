@@ -17,23 +17,23 @@ class ForecastActivity : AppCompatActivity() {
             val forecastDescription = findViewById<TextView>(R.id.forecast_description)
 
             // Actualizamos la vista con el modelo
-            forecastImage.setImageResource(forecast.icon)
-            forecastDescription.text(forecast.description)
-            val maxTempString = getString(R.string.max_temp_format, forecast.maxTemp)
-            val minTempString = getString(R.string.min_temp_format, forecast.minTemp)
-            val humidityString = getString(R.string.humidity_format, forecast.humidity)
-            maxTemp.setText(maxTempString)
-            minTemp.setText(minTempString)
-            humidity.setText(humidityString)
+            if (value != null) {
+                forecastImage.setImageResource(value.icon)
+                forecastDescription.text = value.description
+                val maxTempString = getString(R.string.max_temp_format, value.maxTemp)
+                val minTempString = getString(R.string.min_temp_format, value.minTemp)
+                val humidityString = getString(R.string.humidity_format, value.humidity)
+                maxTemp.setText(maxTempString)
+                minTemp.setText(minTempString)
+                humidity.setText(humidityString)
+            }
         }
-
-    val TAG = ForecastActivity::class.java.canonicalName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forecast)
 
-        val forecast = Forecast(25f, 10f, 35f, "Soleado con alguna nube", R.drawable.ico_01)
+        forecast = Forecast(25f, 10f, 35f, "Soleado con alguna nube", R.drawable.ico_01)
 
     }
 
