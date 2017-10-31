@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -13,6 +14,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     //var donkeyButton: Button? = null
 
     val TAG = MainActivity::class.java.canonicalName
+    var offLineWeatherImage: ImageView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +31,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         //Mejoramos lo anterior
         findViewById<Button>(R.id.stone_button).setOnClickListener(this)
         findViewById<Button>(R.id.donkey_button).setOnClickListener(this)
+
+        offLineWeatherImage = findViewById<ImageView>(R.id.offLine_weather_image)
 
         Log.v(TAG, "He pasado por onCreate")
 
@@ -72,7 +76,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         // Solución 4
         /*
         when (v?.id) {
-            R.id.stone_button -> Log.v(TAG, "Hemos pulsado el botón piedra")
+            R.id.stone_button -> {
+                val a = 5
+                val b = 7
+                val c = a + b
+                Log.v(TAG, "Hemos pulsado el botón piedra")
+            }
             R.id.donkey_button -> Log.v(TAG, "Hemos pulsado el botón burro")
             else -> Log.v(TAG, "No sé qué sé pulsó") // Este else es VOLUNTARIO
         }
@@ -83,6 +92,22 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.donkey_button -> "Hemos pulsado el botón burro"
             else -> "No sé qué sé pulsó" // Este else es OBLIGATORIO
         })
+
+        // Solución 4
+        /*
+        when (v?.id){
+            R.id.stone_button -> offLineWeatherImage?.setImageResource(R.drawable.offline_weather)
+            R.id.donkey_button -> offLineWeatherImage?.setImageResource(R.drawable.offline_weather2)
+        }
+        */
+        // Solución 5
+        /**/
+        offLineWeatherImage?.setImageResource(when (v?.id) {
+            R.id.donkey_button -> R.drawable.offline_weather2
+            else -> R.drawable.offline_weather
+        })
+        /**/
+
     }
 
     override fun onSaveInstanceState(outState: Bundle?) {
