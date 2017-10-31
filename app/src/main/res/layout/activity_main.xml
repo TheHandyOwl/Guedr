@@ -10,18 +10,22 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:contentDescription="@string/offline_description"
         android:scaleType="fitXY"
         app:srcCompat="@drawable/offline_weather" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/stone_button"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center|right"
-        android:layout_gravity="top|center"
-        android:background="#FABADA"
-        android:text="@string/greeting"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:text="@string/stone_button" />
+
+    <Button
+        android:id="@+id/donkey_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/donkey_button" />
 
 </LinearLayout>

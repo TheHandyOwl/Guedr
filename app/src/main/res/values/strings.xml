@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Guedr</string>
     <string name="greeting">Hola Keepcoders!</string>
+    <string name="offline_description">Offline Description</string>
+    <string name="stone_button">Sistema piedra</string>
+    <string name="donkey_button">Sistema burro</string>
 </resources>
