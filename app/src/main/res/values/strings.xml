@@ -5,4 +5,7 @@
     <string name="stone_button">Sistema piedra</string>
     <string name="donkey_button">Sistema burro</string>
     <string name="forecast_Image_Description">Imagen del tiempo que hace</string>
+    <string name="max_temp_format">Temp. máxima: %fº</string>
+    <string name="min_temp_format">Temp. mínima: %fº</string>
+    <string name="humidity">Humedad: %.0f %%</string>
 </resources>
