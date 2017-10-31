@@ -9,8 +9,8 @@ import android.widget.Button
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     // Ponemos los botones como atributos
-    var stoneButton: Button? = null
-    var donkeyButton: Button? = null
+    //var stoneButton: Button? = null
+    //var donkeyButton: Button? = null
 
     val TAG = MainActivity::class.java.canonicalName
 
@@ -20,11 +20,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         // Enlazar controlador con vistas
         //findViewById<>()
-        stoneButton = findViewById<Button>(R.id.stone_button)
-        donkeyButton = findViewById<Button>(R.id.donkey_button)
+        //stoneButton = findViewById<Button>(R.id.stone_button)
+        //donkeyButton = findViewById<Button>(R.id.donkey_button)
 
-        stoneButton?.setOnClickListener(this)
-        donkeyButton?.setOnClickListener(this)
+        //stoneButton?.setOnClickListener(this)
+        //donkeyButton?.setOnClickListener(this)
+
+        //Mejoramos lo anterior
+        findViewById<Button>(R.id.stone_button).setOnClickListener(this)
+        findViewById<Button>(R.id.donkey_button).setOnClickListener(this)
 
         Log.v(TAG, "He pasado por onCreate")
 
