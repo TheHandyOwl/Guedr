@@ -20,14 +20,17 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // TODO: Esto queda pendiente
+    
     override fun onSaveInstanceState(outState: Bundle?) {
-//        super.onSaveInstanceState(outState)
-//        Log.v(TAG, "He pasado por onSaveInstanceState")
-//
+        super.onSaveInstanceState(outState)
+        Log.v(TAG, "He pasado por onSaveInstanceState")
+
 //        if (outState != null) {
 //            //Aquí estamos seguros de que podemos llamar a métodos de outStatu sin NPE
 //            outState.putString("clave", "valor")
 //        }
+
         // El resultado es el mismo
         outState?.putString("clave", "valor")
     }
