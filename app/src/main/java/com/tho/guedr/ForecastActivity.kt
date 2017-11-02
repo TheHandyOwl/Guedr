@@ -1,7 +1,10 @@
 package com.tho.guedr
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
 
@@ -35,6 +38,27 @@ class ForecastActivity : AppCompatActivity() {
 
         forecast = Forecast(25f, 10f, 35f, "Soleado con alguna nube", R.drawable.ico_01)
 
+    }
+
+    // Este método define qué opciones de menú tenemos
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        super.onCreateOptionsMenu(menu)
+        menuInflater.inflate(R.menu.settings, menu)
+
+        return true
+    }
+
+    // Este método dice que se hace una vez que se ha pulsado una opción de menú
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if (item?.itemId == R.id.menu_show_settings) {
+            // Aquí sabemos que se ha pulsado la opción de menú de mostrar ajustes
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+
+            return true
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
 }
