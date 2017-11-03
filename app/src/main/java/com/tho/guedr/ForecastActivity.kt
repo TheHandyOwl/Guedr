@@ -5,21 +5,26 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.preference.PreferenceManager
+import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_settings.*
 
 class ForecastActivity : AppCompatActivity() {
 
     companion object {
+        // Para saber de qué pantalla regresamos
         var REQUEST_UNITS = 1
     }
 
-    var maxTemp: TextView? = null
-    var minTemp: TextView? = null
+    lateinit var maxTemp: TextView
+    lateinit var minTemp: TextView
 
 
     var forecast: Forecast? = null
@@ -33,7 +38,8 @@ class ForecastActivity : AppCompatActivity() {
             val forecastDescription = findViewById<TextView>(R.id.forecast_description)
 
             // Actualizamos la vista con el modelo
-            if (value != null) {
+            //if (value != null) {
+            value?.let {
                 forecastImage.setImageResource(value.icon)
                 forecastDescription.text = value.description
                 updateTemperature()
@@ -64,7 +70,12 @@ class ForecastActivity : AppCompatActivity() {
         if (item?.itemId == R.id.menu_show_settings) {
             // Aquí sabemos que se ha pulsado la opción de menú de mostrar ajustes
             //val intent = Intent(this, SettingsActivity::class.java)
-            val intent = SettingsActivity.intent(this)
+            //val intent = SettingsActivity.intent(this)
+            val units = if (temperatureUnits() == Forecast.TempUnit.CELSIUS)
+                    R.id.celsius_rb
+                else
+                    R.id.farenheit_rb
+            val intent = SettingsActivity.intent(this, units)
 
             // Esto lo haríamos si la segunda pantalla no nos tiene que devolver nada
             //startActivity(intent)
@@ -89,9 +100,15 @@ class ForecastActivity : AppCompatActivity() {
                 when(unitSelected) {
                     R.id.celsius_rb -> {
                         Log.v("TAG", "Soy ForecastActivity y han pulsado Ok y Celsius")
+                        //Toast.makeText(this, "Celsius seleccionado", Toast.LENGTH_LONG).show()
                     }
-                    R.id.farenheit_rb -> Log.v("TAG", "Soy ForecastActivity y han pulsado OK y Fahrenheit")
+                    R.id.farenheit_rb ->  {
+                        Log.v("TAG", "Soy ForecastActivity y han pulsado OK y Fahrenheit")
+                        //Toast.makeText(this, "Fahrenheit seleccionado", Toast.LENGTH_LONG).show()
+                    }
                 }
+
+                val oldShowCelsius = temperatureUnits() // Me las guardo para luego por si el usuario quiere deshacer
 
                 PreferenceManager.getDefaultSharedPreferences(this)
                         .edit()
@@ -99,21 +116,32 @@ class ForecastActivity : AppCompatActivity() {
                         .apply()
                 updateTemperature()
 
-            } else {
+                Snackbar.make(findViewById<View>(android.R.id.content), "Han cambiado las preferencias", Snackbar.LENGTH_LONG)
+                        .setAction("Deshacer") {
+                            PreferenceManager.getDefaultSharedPreferences(this)
+                                    .edit()
+                                    .putBoolean(PREFERENCE_SHOW_CELSIUS, oldShowCelsius == Forecast.TempUnit.CELSIUS)
+                                    .apply()
+                            updateTemperature()
+                        }
+                        .show()
 
+            } else {
                 Log.v("TAG", "Soy ForecastActivity y han pulsado CANCEL")
             }
         }
     }
 
-    @SuppressLint("StringFormatMatches")
+    //@SuppressLint("StringFormatMatches") //Cuando ha salido ésto aquí???
     private fun updateTemperature() {
         val units = temperatureUnits()
         val unitsString = temperatureUnitsString(units)
-        val maxTempString = getString(R.string.max_temp_format, forecast?.maxTemp, unitsString)
-        val minTempString = getString(R.string.min_temp_format, forecast?.minTemp, unitsString)
-        maxTemp?.text = maxTempString
-        minTemp?.text = minTempString
+        //val maxTempString = getString(R.string.max_temp_format, forecast?.maxTemp, unitsString)
+        //val minTempString = getString(R.string.min_temp_format, forecast?.minTemp, unitsString)
+        val maxTempString = getString(R.string.max_temp_format, forecast?.getMaxTemp(units), unitsString)
+        val minTempString = getString(R.string.min_temp_format, forecast?.getMinTemp(units), unitsString)
+        maxTemp.text = maxTempString
+        minTemp.text = minTempString
 //        maxTemp?.setText(maxTempString)
 //        minTemp?.setText(minTempString)
 
