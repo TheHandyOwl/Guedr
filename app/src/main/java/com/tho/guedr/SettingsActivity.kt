@@ -19,7 +19,7 @@ class SettingsActivity: AppCompatActivity() {
         }
         */
 
-        fun intent(context: Context)= Intent(context, SettingsActivity::class.java)
+        fun intent(context: Context) = Intent(context, SettingsActivity::class.java)
     }
 
     var radioGroup : RadioGroup? = null
