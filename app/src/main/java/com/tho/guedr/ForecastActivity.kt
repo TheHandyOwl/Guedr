@@ -34,7 +34,8 @@ class ForecastActivity : AppCompatActivity() {
             val forecastDescription = findViewById<TextView>(R.id.forecast_description)
 
             // Actualizamos la vista con el modelo
-            if (value != null) {
+            //if (value != null) {
+            value?.let {
                 forecastImage.setImageResource(value.icon)
                 forecastDescription.text = value.description
                 updateTemperature()

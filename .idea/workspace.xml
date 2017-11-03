@@ -135,12 +135,12 @@
       <file leaf-file-name="ForecastActivity.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tho/guedr/ForecastActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="22" column="34" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+            <state relative-caret-position="512">
+              <caret line="44" column="12" lean-forward="true" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="13" />
               <folding>
                 <element signature="e#23#377#0" expanded="true" />
-                <element signature="e#4577#4654#0" expanded="true" />
-                <element signature="e#4683#4760#0" expanded="true" />
+                <element signature="e#4604#4681#0" expanded="true" />
+                <element signature="e#4710#4787#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2548,7 +2548,7 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1509740275279" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1509740392503" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2595,7 +2595,7 @@
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
       </Profilers>
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1509740275279" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1509740392503" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2756,7 +2756,7 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1509740275280" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1509740392504" />
       </method>
     </configuration>
     <list size="1">
@@ -2917,8 +2917,8 @@
           <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
             <element signature="e#23#377#0" expanded="true" />
-            <element signature="e#4577#4654#0" expanded="true" />
-            <element signature="e#4683#4760#0" expanded="true" />
+            <element signature="e#4604#4681#0" expanded="true" />
+            <element signature="e#4710#4787#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3061,12 +3061,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tho/guedr/ForecastActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="22" column="34" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+        <state relative-caret-position="512">
+          <caret line="44" column="12" lean-forward="true" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="13" />
           <folding>
             <element signature="e#23#377#0" expanded="true" />
-            <element signature="e#4577#4654#0" expanded="true" />
-            <element signature="e#4683#4760#0" expanded="true" />
+            <element signature="e#4604#4681#0" expanded="true" />
+            <element signature="e#4710#4787#0" expanded="true" />
           </folding>
         </state>
       </provider>
