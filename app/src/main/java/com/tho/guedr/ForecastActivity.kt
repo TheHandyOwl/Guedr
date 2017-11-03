@@ -19,8 +19,8 @@ class ForecastActivity : AppCompatActivity() {
         var REQUEST_UNITS = 1
     }
 
-    var maxTemp: TextView? = null
-    var minTemp: TextView? = null
+    lateinit var maxTemp: TextView
+    lateinit var minTemp: TextView
 
 
     var forecast: Forecast? = null
@@ -119,8 +119,8 @@ class ForecastActivity : AppCompatActivity() {
         //val minTempString = getString(R.string.min_temp_format, forecast?.minTemp, unitsString)
         val maxTempString = getString(R.string.max_temp_format, forecast?.getMaxTemp(units), unitsString)
         val minTempString = getString(R.string.min_temp_format, forecast?.getMinTemp(units), unitsString)
-        maxTemp?.text = maxTempString
-        minTemp?.text = minTempString
+        maxTemp.text = maxTempString
+        minTemp.text = minTempString
 //        maxTemp?.setText(maxTempString)
 //        minTemp?.setText(minTempString)
 
