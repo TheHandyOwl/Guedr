@@ -17,7 +17,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2aff007d-32e1-4f66-9709-461ae5b861a1" name="Default" comment="First commit">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tho/guedr/SettingsActivity.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/tho/guedr/SettingsActivity.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tho/guedr/ForecastActivity.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/tho/guedr/ForecastActivity.kt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -132,25 +132,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ForecastActivity.kt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ForecastActivity.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tho/guedr/ForecastActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="44" column="12" lean-forward="true" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="13" />
+            <state relative-caret-position="385">
+              <caret line="103" column="56" lean-forward="false" selection-start-line="103" selection-start-column="56" selection-end-line="103" selection-end-column="56" />
               <folding>
-                <element signature="e#23#377#0" expanded="true" />
-                <element signature="e#4604#4681#0" expanded="true" />
-                <element signature="e#4710#4787#0" expanded="true" />
+                <element signature="e#23#405#0" expanded="true" />
+                <element signature="e#4874#4951#0" expanded="true" />
+                <element signature="e#4980#5057#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SettingsActivity.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SettingsActivity.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tho/guedr/SettingsActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="685">
-              <caret line="45" column="35" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="52" selection-end-column="1" />
+            <state relative-caret-position="551">
+              <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
                 <element signature="e#23#305#0" expanded="true" />
               </folding>
@@ -1981,8 +1981,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/tho/guedr/Preferences.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tho/guedr/Forecast.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tho/guedr/ForecastActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tho/guedr/SettingsActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tho/guedr/ForecastActivity.kt" />
       </list>
     </option>
   </component>
@@ -2548,7 +2548,7 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1509740634576" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1509740980099" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2595,7 +2595,7 @@
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
       </Profilers>
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1509740634576" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1509740980099" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2756,7 +2756,7 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1509740634576" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1509740980099" />
       </method>
     </configuration>
     <list size="1">
@@ -2916,9 +2916,9 @@
         <state relative-caret-position="570">
           <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
-            <element signature="e#23#377#0" expanded="true" />
-            <element signature="e#4604#4681#0" expanded="true" />
-            <element signature="e#4710#4787#0" expanded="true" />
+            <element signature="e#23#405#0" expanded="true" />
+            <element signature="e#4874#4951#0" expanded="true" />
+            <element signature="e#4980#5057#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3049,24 +3049,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tho/guedr/ForecastActivity.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tho/guedr/SettingsActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="44" column="12" lean-forward="true" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="13" />
+        <state relative-caret-position="551">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding>
-            <element signature="e#23#377#0" expanded="true" />
-            <element signature="e#4604#4681#0" expanded="true" />
-            <element signature="e#4710#4787#0" expanded="true" />
+            <element signature="e#23#305#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tho/guedr/SettingsActivity.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tho/guedr/ForecastActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="685">
-          <caret line="45" column="35" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="52" selection-end-column="1" />
+        <state relative-caret-position="385">
+          <caret line="103" column="56" lean-forward="false" selection-start-line="103" selection-start-column="56" selection-end-line="103" selection-end-column="56" />
           <folding>
-            <element signature="e#23#305#0" expanded="true" />
+            <element signature="e#23#405#0" expanded="true" />
+            <element signature="e#4874#4951#0" expanded="true" />
+            <element signature="e#4980#5057#0" expanded="true" />
           </folding>
         </state>
       </provider>
