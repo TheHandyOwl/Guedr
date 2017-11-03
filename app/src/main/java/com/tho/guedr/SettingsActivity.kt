@@ -22,7 +22,7 @@ class SettingsActivity: AppCompatActivity() {
         }
     }
 
-    var radioGroup : RadioGroup? = null
+    var radioGroup by lazy { findViewById(R.id.units_rg) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,9 +31,8 @@ class SettingsActivity: AppCompatActivity() {
         findViewById<View>(R.id.ok_btn).setOnClickListener { acceptSettings() }
         findViewById<View>(R.id.cancel_btn).setOnClickListener { cancelSettings() }
 
-        radioGroup = findViewById(R.id.units_rg)
         val radioSelected = intent.getIntExtra(EXTRA_UNITS, R.id.celsius_rb)
-        radioGroup?.check(radioSelected)
+        radioGroup.check(radioSelected)
 
     }
 
@@ -45,7 +44,7 @@ class SettingsActivity: AppCompatActivity() {
 
     private fun acceptSettings() {
         val returnIntent = Intent()
-        returnIntent.putExtra(EXTRA_UNITS,radioGroup?.checkedRadioButtonId)
+        returnIntent.putExtra(EXTRA_UNITS,radioGroup.checkedRadioButtonId)
         setResult(Activity.RESULT_OK, returnIntent)
         // Finalizamos esta actividad, regresando a la anterior
         finish()
