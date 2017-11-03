@@ -111,12 +111,14 @@ class ForecastActivity : AppCompatActivity() {
         }
     }
 
-    @SuppressLint("StringFormatMatches")
+    //@SuppressLint("StringFormatMatches") //Cuando ha salido ésto aquí???
     private fun updateTemperature() {
         val units = temperatureUnits()
         val unitsString = temperatureUnitsString(units)
-        val maxTempString = getString(R.string.max_temp_format, forecast?.maxTemp, unitsString)
-        val minTempString = getString(R.string.min_temp_format, forecast?.minTemp, unitsString)
+        //val maxTempString = getString(R.string.max_temp_format, forecast?.maxTemp, unitsString)
+        //val minTempString = getString(R.string.min_temp_format, forecast?.minTemp, unitsString)
+        val maxTempString = getString(R.string.max_temp_format, forecast?.getMaxTemp(units), unitsString)
+        val minTempString = getString(R.string.min_temp_format, forecast?.getMinTemp(units), unitsString)
         maxTemp?.text = maxTempString
         minTemp?.text = minTempString
 //        maxTemp?.setText(maxTempString)
