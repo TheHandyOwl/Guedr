@@ -6,7 +6,7 @@ data class Forecast(val maxTemp: Float, val minTemp: Float, val humidity: Float,
         FAHRENHEIT
     }
 
-    protected fun toFahrenheit(celsius: Float) = celsius * 1.8f + 31
+    protected fun toFahrenheit(celsius: Float) = celsius * 1.8f + 32
 
     fun getMaxTemp(units: TempUnit) = when (units) {
         TempUnit.CELSIUS -> maxTemp
