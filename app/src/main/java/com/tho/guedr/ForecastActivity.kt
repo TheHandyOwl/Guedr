@@ -99,22 +99,25 @@ class ForecastActivity : AppCompatActivity() {
                 when(unitSelected) {
                     R.id.celsius_rb -> {
                         Log.v("TAG", "Soy ForecastActivity y han pulsado Ok y Celsius")
-                        Toast.makeText(this, "Celsius seleccionado", Toast.LENGTH_LONG).show()
+                        //Toast.makeText(this, "Celsius seleccionado", Toast.LENGTH_LONG).show()
                     }
                     R.id.farenheit_rb ->  {
                         Log.v("TAG", "Soy ForecastActivity y han pulsado OK y Fahrenheit")
-                        Toast.makeText(this, "Fahrenheit seleccionado", Toast.LENGTH_LONG).show()
+                        //Toast.makeText(this, "Fahrenheit seleccionado", Toast.LENGTH_LONG).show()
                     }
                 }
 
-                Snackbar.make(findViewById<View>(android.R.id.content), "Han cambiado las preferencias", Snackbar.LENGTH_LONG)
-                        .show()
+                val oldShowCelsius = temperatureUnits() // Me las guardo para luego por si el usuario quiere deshacer
 
-                PreferenceManager.getDefaultSharedPreferences(this)
-                        .edit()
-                        .putBoolean(PREFERENCE_SHOW_CELSIUS, unitSelected == R.id.celsius_rb)
-                        .apply()
-                updateTemperature()
+                Snackbar.make(findViewById<View>(android.R.id.content), "Han cambiado las preferencias", Snackbar.LENGTH_LONG)
+                        .setAction("Deshacer") {
+                            PreferenceManager.getDefaultSharedPreferences(this)
+                                    .edit()
+                                    .putBoolean(PREFERENCE_SHOW_CELSIUS, oldShowCelsius == Forecast.TempUnit.CELSIUS)
+                                    .apply()
+                            updateTemperature()
+                        }
+                        .show()
 
             } else {
                 Log.v("TAG", "Soy ForecastActivity y han pulsado CANCEL")
