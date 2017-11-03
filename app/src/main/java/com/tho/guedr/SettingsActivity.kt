@@ -22,7 +22,7 @@ class SettingsActivity: AppCompatActivity() {
         }
     }
 
-    var radioGroup by lazy { findViewById(R.id.units_rg) }
+    val radioGroup by lazy { findViewById<RadioGroup>(R.id.units_rg) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
