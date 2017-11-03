@@ -14,6 +14,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_settings.*
 
 class ForecastActivity : AppCompatActivity() {
 
@@ -108,6 +109,12 @@ class ForecastActivity : AppCompatActivity() {
                 }
 
                 val oldShowCelsius = temperatureUnits() // Me las guardo para luego por si el usuario quiere deshacer
+
+                PreferenceManager.getDefaultSharedPreferences(this)
+                        .edit()
+                        .putBoolean(PREFERENCE_SHOW_CELSIUS, unitSelected == R.id.celsius_rb)
+                        .apply()
+                updateTemperature()
 
                 Snackbar.make(findViewById<View>(android.R.id.content), "Han cambiado las preferencias", Snackbar.LENGTH_LONG)
                         .setAction("Deshacer") {
