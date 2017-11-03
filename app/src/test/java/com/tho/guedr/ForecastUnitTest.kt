@@ -2,7 +2,7 @@ package com.tho.guedr
 
 import org.junit.Before
 import org.junit.Test
-import java.lang.IllegalArgumentException
+import org.junit.Assert.*
 
 class ForecastUnitTest {
 
@@ -38,9 +38,7 @@ class ForecastUnitTest {
         assertEquals(10f, forecast.getMinTemp(Forecast.TempUnit.CELSIUS))
     }
 
-    //Salen 4 clases de assert para importa, ¿cuál has importado?
-
-    @Test (expected = IllegalArgumentException::class)
+    @Test(expected = IllegalArgumentException::class)
     fun humidityOverRange_throwsArgumentException() {
         Forecast(
                 25f,
@@ -51,8 +49,8 @@ class ForecastUnitTest {
         )
     }
 
-    @Test (expected = IllegalArgumentException::class)
-    fun humidityOverRange_throwsArgumentException() {
+    @Test(expected = IllegalArgumentException::class)
+    fun humidityUnderRange_throwsArgumentException() {
         Forecast(
                 25f,
                 10f,
