@@ -15,6 +15,7 @@ import android.widget.TextView
 class ForecastActivity : AppCompatActivity() {
 
     companion object {
+        // Para saber de qué pantalla regresamos
         var REQUEST_UNITS = 1
     }
 
@@ -100,7 +101,6 @@ class ForecastActivity : AppCompatActivity() {
                 updateTemperature()
 
             } else {
-
                 Log.v("TAG", "Soy ForecastActivity y han pulsado CANCEL")
             }
         }
