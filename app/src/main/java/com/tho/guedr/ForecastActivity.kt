@@ -5,10 +5,12 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.preference.PreferenceManager
+import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -104,6 +106,9 @@ class ForecastActivity : AppCompatActivity() {
                         Toast.makeText(this, "Fahrenheit seleccionado", Toast.LENGTH_LONG).show()
                     }
                 }
+
+                Snackbar.make(findViewById<View>(android.R.id.content), "Han cambiado las preferencias", Snackbar.LENGTH_LONG)
+                        .show()
 
                 PreferenceManager.getDefaultSharedPreferences(this)
                         .edit()
