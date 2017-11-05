@@ -73,7 +73,7 @@ public class ForecastActivityToFahrenheitTest {
         appCompatTextView2.perform(click());
 
         ViewInteraction appCompatRadioButton = onView(
-                allOf(withId(R.id.farenheit_rb), withText("Unidades Fahrenheit"),
+                allOf(withId(R.id.fahrenheit_rb), withText("Unidades Fahrenheit"),
                         childAtPosition(
                                 allOf(withId(R.id.units_rg),
                                         childAtPosition(
