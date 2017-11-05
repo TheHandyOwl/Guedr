@@ -1,4 +1,4 @@
-package com.tho.guedr
+package com.tho.guedr.activity
 
 import android.app.Activity
 import android.content.Context
@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.RadioGroup
-import kotlinx.android.synthetic.main.activity_settings.view.*
+import com.tho.guedr.R
 
 class SettingsActivity: AppCompatActivity() {
 
