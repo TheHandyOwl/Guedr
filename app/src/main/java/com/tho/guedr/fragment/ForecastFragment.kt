@@ -80,7 +80,9 @@ class ForecastFragment : Fragment() {
         inflater?.let {
             // it se refiere a la variable, que no puede ser nombrada dentro del let
             root = it.inflate(R.layout.fragment_forecast, container, false)
-            forecast = Forecast(25f, 10f, 35f, "Soleado con alguna nube", R.drawable.ico_01)
+            if (arguments != null) {
+                city = arguments.getSerializable(ARG_CITY) as City
+            }
         }
 
         return root
