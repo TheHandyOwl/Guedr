@@ -5,10 +5,6 @@
     android:layout_height="match_parent"
     tools:context="com.tho.guedr.activity.ForecastActivity">
 
-    <fragment
-        android:id="@+id/fragment_forecast"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:name="com.tho.guedr.fragment.ForecastFragment"/>
+
 
 </FrameLayout>
