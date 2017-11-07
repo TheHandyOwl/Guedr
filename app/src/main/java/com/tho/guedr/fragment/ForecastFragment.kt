@@ -10,16 +10,30 @@ import android.util.Log
 import android.view.*
 import android.widget.ImageView
 import android.widget.TextView
-import com.tho.guedr.Forecast
+import com.tho.guedr.model.Forecast
 import com.tho.guedr.PREFERENCE_SHOW_CELSIUS
 import com.tho.guedr.R
 import com.tho.guedr.activity.SettingsActivity
 import com.tho.guedr.activity.ForecastActivity
+import com.tho.guedr.model.City
 
 class ForecastFragment : Fragment() {
 
     companion object {
         val REQUEST_UNITS = 1
+        private val ARG_CITY = "ARG_CITY"
+
+        fun newInstance(city: City): ForecastFragment {
+            val fragment = ForecastFragment()
+
+            val arguments = Bundle()
+            // Como no podemos pasar City pasamos un serializable
+            // OJO: todos los atributos tienen que ser serializables
+            arguments.putSerializable(ARG_CITY, city)
+            fragment.arguments = arguments
+
+            return fragment
+        }
     }
 
     val TAG = ForecastActivity::class.java.canonicalName
@@ -27,6 +41,14 @@ class ForecastFragment : Fragment() {
     lateinit var root: View
     lateinit var maxTemp: TextView
     lateinit var minTemp: TextView
+
+    var city: City? = null
+        set(value) {
+            if (value != null) {
+                root.findViewById<TextView>(R.id.city).setText(value.name)
+                forecast = value.forecast
+            }
+        }
 
     var forecast: Forecast? = null
         set(value) {
@@ -58,7 +80,9 @@ class ForecastFragment : Fragment() {
         inflater?.let {
             // it se refiere a la variable, que no puede ser nombrada dentro del let
             root = it.inflate(R.layout.fragment_forecast, container, false)
-            forecast = Forecast(25f, 10f, 35f, "Soleado con alguna nube", R.drawable.ico_01)
+            if (arguments != null) {
+                city = arguments.getSerializable(ARG_CITY) as City
+            }
         }
 
         return root
@@ -135,6 +159,15 @@ class ForecastFragment : Fragment() {
             } else {
                 Log.v(TAG,"Soy ForecastActivity y han pulsado CANCEL")
             }
+        }
+    }
+
+    // Para saber si, estando en un ViewPager por ejemplo, debemos refrescar las unidades de las temperaturas
+    // Es algo así como el viewWillAppear de los Fragment
+    override fun setUserVisibleHint(isVisibleToUser: Boolean) {
+        super.setUserVisibleHint(isVisibleToUser)
+        if (isVisibleToUser && forecast != null) {
+            updateTemperature()
         }
     }
 
