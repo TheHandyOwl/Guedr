@@ -1,5 +1,6 @@
 package com.tho.guedr
 
+import com.tho.guedr.model.Forecast
 import org.junit.Before
 import org.junit.Test
 import org.junit.Assert.*

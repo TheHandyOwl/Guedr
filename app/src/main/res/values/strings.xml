@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Guedr</string>
+    <string name="app_name">Güedr</string>
     <string name="greeting">Hola Keepcoders!</string>
     <string name="offline_description">Offline Description</string>
     <string name="stone_button">Sistema piedra</string>
@@ -12,4 +12,8 @@
     <string name="celsius_units">Unidades Celsius</string>
     <string name="faharenheit_units">Unidades Fahrenheit</string>
     <string name="settings">Ajustes</string>
+    <string name="previous">Anterior</string>
+    <string name="next">Siguiente</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
