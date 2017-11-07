@@ -25,7 +25,7 @@ class CityListFragment : Fragment() {
         fun newInstance(cities: Cities): CityListFragment {
             val fragment = CityListFragment()
             val args = Bundle()
-            args.putString(ARG_CITIES, cities)
+            args.putSerializable(ARG_CITIES, cities)
             fragment.arguments = args
             return fragment
         }
@@ -48,14 +48,13 @@ class CityListFragment : Fragment() {
         if (inflater!= null) {
             root = inflater.inflate(R.layout.fragment_city_list, container, false)
             val list = root.findViewById<ListView>(R.id.city_list)
-            var adapter = ArrayAdapter<City>(activity, android.R.layout.simple_list_item_1, cities?.toArray())
+            val adapter = ArrayAdapter<City>(activity, android.R.layout.simple_list_item_1, cities?.toArray())
             list.adapter = adapter
 
             // Nos enteramos de que se ha pulsado un elemento de la lista así:
             list.setOnItemClickListener { parent, view, position, id ->
                 // Aviso al listener
-                onCitySelectedListener?.onCitySelected(cities[position])
-
+                onCitySelectedListener?.OnCitySelected(cities?.get(position), position)
             }
         }
 

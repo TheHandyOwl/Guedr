@@ -1,6 +1,5 @@
 package com.tho.guedr.model
 
-import com.tho.guedr.Forecast
 import com.tho.guedr.R
 import java.io.Serializable
 
@@ -17,6 +16,6 @@ class Cities: Serializable {
     //fun getCity(index: Int) = cities[index]
     operator fun get(i:Int) = cities[i]
 
-    fun toArray = cities.toTypedArray()
+    fun toArray() = cities.toTypedArray()
 
 }

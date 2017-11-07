@@ -10,7 +10,7 @@ import android.util.Log
 import android.view.*
 import android.widget.ImageView
 import android.widget.TextView
-import com.tho.guedr.Forecast
+import com.tho.guedr.model.Forecast
 import com.tho.guedr.PREFERENCE_SHOW_CELSIUS
 import com.tho.guedr.R
 import com.tho.guedr.activity.SettingsActivity
@@ -45,8 +45,8 @@ class ForecastFragment : Fragment() {
     var city: City? = null
         set(value) {
             if (value != null) {
-                root.findViewById<TextView>(R.id.city).setText(value?.name)
-                forecast = value?.forecast
+                root.findViewById<TextView>(R.id.city).setText(value.name)
+                forecast = value.forecast
             }
         }
 

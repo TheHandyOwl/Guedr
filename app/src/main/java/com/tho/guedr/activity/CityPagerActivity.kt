@@ -22,7 +22,7 @@ class CityPagerActivity : AppCompatActivity() {
 
         val EXTRA_CITY_INDEX = "EXTRA_CITY_INDEX"
 
-        fun intent(context: Context): Intent {
+        fun intent(context: Context, cityIndex: Int): Intent {
             val intent = Intent(context, CityPagerActivity::class.java)
             intent.putExtra(EXTRA_CITY_INDEX, cityIndex)
             return intent
@@ -42,7 +42,6 @@ class CityPagerActivity : AppCompatActivity() {
         toolbar.setLogo(R.mipmap.ic_launcher)
         setSupportActionBar(toolbar)
 
-        val pager = findViewById<ViewPager>(R.id.view_pager)
         val adapter = object: FragmentPagerAdapter(fragmentManager) {
             override fun getItem(position: Int): Fragment = ForecastFragment.newInstance(cities[position])
 
@@ -57,15 +56,21 @@ class CityPagerActivity : AppCompatActivity() {
         // Para cambiar el título al cambiar de página necesitamos un listener
         pager.addOnPageChangeListener(object: ViewPager.OnPageChangeListener {
             override fun onPageScrollStateChanged(state: Int) { }
+
             override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) { }
+
             override fun onPageSelected(position: Int) {
                 updateCityInfo(position)
             }
+
         })
+
+        val initialCityIndex = intent.getIntExtra(EXTRA_CITY_INDEX, 0)
+        pager.currentItem = initialCityIndex
+        updateCityInfo(initialCityIndex)
 
     }
 
-    // Algo aquí
 
     fun updateCityInfo(position: Int) {
         supportActionBar?.title = cities[position].name

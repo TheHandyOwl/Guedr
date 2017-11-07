@@ -24,7 +24,7 @@ class ForecastActivity : AppCompatActivity(), CityListFragment.OnCitySelectedLis
     }
 
     override fun OnCitySelected(city: City?, position: Int) {
-
+        startActivity(CityPagerActivity.intent(this, position))
     }
 
 }

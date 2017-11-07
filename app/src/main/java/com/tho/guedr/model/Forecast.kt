@@ -1,4 +1,4 @@
-package com.tho.guedr
+package com.tho.guedr.model
 
 import java.io.Serializable
 
